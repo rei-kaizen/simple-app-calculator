@@ -17,10 +17,21 @@ def calculator():
         print(user_num1 / user_num2)
     else:
         print("Invalid Operation")
+    
+        
+    # use loop to ask if the user wants to try again or not.
+    while True:
+        user_attempt = input("Do you want to try again or not? (yes/no): ")
+        ## If yes, then perform the operation again.
+        if user_attempt == "yes":
+            calculator()
+        ## if no, Display “Thank you!”
+        else:
+            print("Thank you!")
+            
+        break
+            
+        # then the program will exit
+        #Use Python Functions and appropriate Exceptions to capture errors during runtime.
 
 calculator()
-    # use loop to ask if the user wants to try again or not.
-    ## If yes, then perform the operation again.
-    ## if no, Display “Thank you!”\
-    # then the program will exit
-    #Use Python Functions and appropriate Exceptions to capture errors during runtime.
