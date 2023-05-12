@@ -46,7 +46,7 @@ while True:
             return None
 
         finally:
-            print("===" * 3)
+            print("=" * 25)
             return output
             
     # Call the function to perform the calculation and print the result

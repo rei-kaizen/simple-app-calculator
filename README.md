@@ -2,7 +2,7 @@
 This is a simple calculator program written in Python. It allows the user to choose one of four math operations: addition, subtraction, multiplication, and division. The user is prompted to enter two numbers, and the program uses Python functions to perform the chosen operation.
 
 **See sample demo:**
-![img](demo.png)
+![img](calculaor-demo.png)
 
 ## 📄 Documentation 
 <details><summary><h3> 🤔 Usage </h3></summary>
