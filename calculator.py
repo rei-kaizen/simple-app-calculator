@@ -1,8 +1,9 @@
+import pyfiglet
 
 def calculator():
     # ask the user to choose one of four math operations:
-    user_choice_operation = input("Choose one of the operations (Addition, Subtraction, Multiplication, and Multiplication): ")  
-    ## Addition, Subtraction, Multiplication, and Multiplication
+    user_choice_operation = input("Choose one of the operations (Addition, Subtraction, Multiplication, and Division): ")  
+    ## Addition, Subtraction, Multiplication, and Division
     # ask the user to enter two numbers
     user_num1 = input("Enter the 1st number: ")
     user_num2 = input("Enter the 2nd number: ")
@@ -15,15 +16,15 @@ def calculator():
             user_num2 = float(user_num2)  
             # display the result
             if user_choice_operation == "Addition":
-                print(user_num1 + user_num2)
+                output = user_num1 + user_num2
             elif user_choice_operation == "Subtraction":
-                print(user_num1 - user_num2)
+                output =user_num1 - user_num2
             elif user_choice_operation == "Multiplication":
-                print(user_num1 * user_num2)
+                output =user_num1 * user_num2
             elif user_choice_operation == "Division":
                 if user_num2 == 0:
                     raise ZeroDivisionError("Division by zero is undefined :|")
-                print(user_num1 / user_num2)
+                output = user_num1 / user_num2
             else:
                 raise Exception("Add, Subtract, Multiplication and Division operations only :(")
         else:
@@ -31,26 +32,41 @@ def calculator():
     
     except ValueError as raised :
         print(raised)
+        return None
+        
     except ZeroDivisionError as raised:
         print(raised)
+        return None
+        
     except Exception as raised:
         print(raised)
+        return None
 
     finally:
         print("===" * 3)
-            
-        # use loop to ask if the user wants to try again or not.
-        while True:
-            user_attempt = input("Do you want to try again or not? (yes/no): ")
-            ## If yes, then perform the operation again.
-            if user_attempt == "yes":
-                calculator()
-            ## if no, Display “Thank you!”
-            else:
-                print("Thank you!")
-            
-            break
-                
-            # then the program will exit
-                    
+        return output
+         
+# Call the function to perform the calculation and print the result
+output = calculator()
+print(f"\033[91mResult:\033[0m {output}")
+print(".\n.\n.")
+    
+# use loop to ask if the user wants to try again or not.
+while True:
+    user_attempt = input("Do you want to try again or not? (yes/no): ")
+    ## If yes, then perform the operation again.
+    if user_attempt == "yes":
+        output = calculator()
+        print(f"\033[91mResult:\033[0m {output}")
+        print(".\n.\n.")
+    ## if no, Display “Thank you!”
+    else:
+        print(pyfiglet.figlet_format("Thank you!"))
+    
+    break
+    # then the program will exit
+
+
+
+
 calculator()
